@@ -1,6 +1,6 @@
 import { Product, Testimonial } from './types';
 
-export const WHATSAPP_NUMBER = '94XXXXXXXXX'; // Replace with your WhatsApp number
+export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '94XXXXXXXXX'; // Falls back to placeholder if not set
 
 export const PRODUCTS: Product[] = [
   {
