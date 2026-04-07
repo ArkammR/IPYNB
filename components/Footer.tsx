@@ -7,10 +7,10 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4 text-amber-300">Solutions</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#solutions" className="text-white/70 hover:text-amber-300 transition-colors">Jupyter Notebooks</a></li>
               <li><a href="#solutions" className="text-white/70 hover:text-amber-300 transition-colors">POS Systems</a></li>
               <li><a href="#solutions" className="text-white/70 hover:text-amber-300 transition-colors">Billing Systems</a></li>
               <li><a href="#solutions" className="text-white/70 hover:text-amber-300 transition-colors">Business Websites</a></li>
+              <li><a href="#pricing" className="text-white/70 hover:text-amber-300 transition-colors">Pricing</a></li>
             </ul>
           </div>
           <div>
@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4 text-amber-300">Connect</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">WhatsApp: +94 XX XXX XXXX</a></li>
+          <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} className="text-white/70 hover:text-amber-300 transition-colors">WhatsApp Us</a></li>
               <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Email: hello@ipynb.site</a></li>
               <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Twitter</a></li>
               <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">LinkedIn</a></li>
@@ -44,7 +44,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/60">
-          <p>Made with ❤️ for businesses in Sri Lanka | © 2024 IPYNB.site. All rights reserved.</p>
+          <p>Made with ❤️ for businesses in Sri Lanka | © 2025 IPYNB.site. All rights reserved.</p>
         </div>
       </div>
     </footer>

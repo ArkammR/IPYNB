@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useCartStore } from '@/lib/store';
+import { useCartStore, useCurrencyStore } from '@/lib/store';
 import { PRODUCTS } from '@/lib/constants';
 import { ProductCategory } from '@/lib/types';
 import ProductCard from './ProductCard';
@@ -11,6 +11,7 @@ export default function Products() {
   const [filter, setFilter] = useState<ProductCategory>('all');
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
   const addToCart = useCartStore((state) => state.addToCart);
+  const formatPrice = useCurrencyStore((state) => state.formatPrice);
 
   const categories: { value: ProductCategory; label: string }[] = [
     { value: 'all', label: 'All Systems' },
@@ -20,12 +21,13 @@ export default function Products() {
   ];
 
   const filtered = filter === 'all' ? PRODUCTS : PRODUCTS.filter((p) => p.category === filter);
+  const sorted = [...filtered].sort((a, b) => (b.screenshot ? 1 : 0) - (a.screenshot ? 1 : 0));
 
   const handleAddToCart = (productId: number) => {
     const product = PRODUCTS.find((p) => p.id === productId);
     if (product) {
       addToCart(product);
-      showNotification(`${product.title} added to cart!`);
+      showNotification(`${product.title} added to enquiry!`);
     }
   };
 
@@ -65,10 +67,11 @@ export default function Products() {
 
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filtered.map((product) => (
+          {sorted.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
+              formattedPrice={formatPrice(product.price)}
               onAddToCart={() => handleAddToCart(product.id)}
               onPreview={() => setSelectedProductId(product.id)}
             />

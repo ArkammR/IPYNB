@@ -1,6 +1,6 @@
 import { Product, Testimonial } from './types';
 
-export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '94XXXXXXXXX'; // Falls back to placeholder if not set
+export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '94724218840';
 
 export const PRODUCTS: Product[] = [
   {
@@ -8,8 +8,10 @@ export const PRODUCTS: Product[] = [
     title: 'POS System',
     category: 'pos',
     price: 299,
-    description: 'Complete Point of Sale system with inventory management, sales tracking, and reporting',
+    description: 'Complete Point of Sale system with billing, inventory, sales, returns, expenses and full reporting',
     icon: '🛒',
+    screenshot: '/products/pos-system.png',
+    features: ['Dashboard with live business overview', 'Billing & receipt printing', 'Product & inventory management', 'Sales & returns tracking', 'Expense management', 'Reports & analytics', 'Promotions & discounts', 'User administration & roles', 'Activity log', 'Data backup', 'Staff training (2 sessions)', '6 months WhatsApp support'],
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ export const PRODUCTS: Product[] = [
     price: 199,
     description: 'Professional invoicing and billing with automated payment tracking and receipts',
     icon: '📄',
+    screenshot: '/products/pos-inventory.png',
+    features: ['Billing software setup', 'Invoice & receipt templates', 'Payment tracking dashboard', 'Staff training (1 session)', '6 months WhatsApp support', 'Free updates & bug fixes'],
   },
   {
     id: 3,
@@ -26,6 +30,8 @@ export const PRODUCTS: Product[] = [
     price: 499,
     description: 'Custom responsive business website with contact forms and online presence',
     icon: '🌐',
+    screenshot: '/products/business-website.png',
+    features: ['Custom responsive design', 'Up to 5 pages', 'Contact form integration', 'SEO basic setup', '1 year hosting guidance', '6 months WhatsApp support'],
   },
   {
     id: 4,
@@ -34,6 +40,8 @@ export const PRODUCTS: Product[] = [
     price: 399,
     description: 'Advanced POS with real-time inventory management and stock alerts',
     icon: '📦',
+    screenshot: '/products/complete-suite.png',
+    features: ['Everything in POS System', 'Real-time inventory tracking', 'Low stock & reorder alerts', 'Barcode scanner support', 'Supplier management', 'Purchase order tracking', 'Staff training (3 sessions)', '12 months WhatsApp support'],
   },
   {
     id: 5,
@@ -42,6 +50,7 @@ export const PRODUCTS: Product[] = [
     price: 349,
     description: 'Centralized billing system for multiple store locations with unified reporting',
     icon: '🏪',
+    features: ['Multi-branch billing setup', 'Centralized dashboard', 'Per-branch reporting', 'Admin & staff accounts', 'Staff training (2 sessions)', '12 months WhatsApp support'],
   },
   {
     id: 6,
@@ -50,6 +59,8 @@ export const PRODUCTS: Product[] = [
     price: 799,
     description: 'Full e-commerce platform with payment gateway and product management',
     icon: '🛍️',
+    screenshot: '/products/ecommerce-website.png',
+    features: ['Full e-commerce platform', 'Payment gateway integration', 'Product management panel', 'Order tracking system', 'SEO optimization', '12 months WhatsApp support'],
   },
   {
     id: 7,
@@ -58,6 +69,7 @@ export const PRODUCTS: Product[] = [
     price: 449,
     description: 'Integrated POS and billing system for seamless operations',
     icon: '💼',
+    features: ['Everything in POS System', 'Integrated billing module', 'Unified sales & invoice dashboard', 'Returns & refund management', 'Promotions & discount engine', 'Multi-user with role control', 'Staff training (3 sessions)', '12 months WhatsApp support'],
   },
   {
     id: 8,
@@ -66,6 +78,7 @@ export const PRODUCTS: Product[] = [
     price: 549,
     description: 'Specialized POS for restaurants with table management and kitchen display',
     icon: '🍽️',
+    features: ['Everything in POS System', 'Table & order management', 'Kitchen display system (KDS)', 'Menu & category management', 'Dine-in, takeaway & delivery modes', 'Daily sales & shift reports', 'Staff training (3 sessions)', '12 months WhatsApp support'],
   },
   {
     id: 9,
@@ -74,6 +87,7 @@ export const PRODUCTS: Product[] = [
     price: 399,
     description: 'Specialized billing for pharmacies with prescription management',
     icon: '💊',
+    features: ['Pharmacy billing software', 'Prescription management', 'Medicine inventory tracking', 'Expiry date alerts', 'Staff training (2 sessions)', '12 months WhatsApp support'],
   },
   {
     id: 10,
@@ -82,6 +96,8 @@ export const PRODUCTS: Product[] = [
     price: 599,
     description: 'Complete business portal with customer management and analytics',
     icon: '📊',
+    screenshot: '/products/business-portal.png',
+    features: ['Custom business portal', 'Customer management (CRM)', 'Analytics dashboard', 'Staff login system', 'SEO optimization', '12 months WhatsApp support'],
   },
   {
     id: 11,
@@ -90,6 +106,7 @@ export const PRODUCTS: Product[] = [
     price: 899,
     description: 'Mobile app for your business with iOS and Android support',
     icon: '📱',
+    features: ['iOS & Android app', 'Integration with existing system', 'Push notifications', 'App store submission', 'Staff training (2 sessions)', '12 months WhatsApp support'],
   },
   {
     id: 12,
@@ -98,6 +115,7 @@ export const PRODUCTS: Product[] = [
     price: 1299,
     description: 'All-in-one solution: POS, Billing, Website, and Mobile App',
     icon: '⚙️',
+    features: ['Full POS with all modules', 'Billing & invoicing system', 'Business website', 'Mobile app (iOS & Android)', 'Unified admin dashboard', 'Reports, analytics & backup', 'Promotions & expense tracking', 'Priority WhatsApp support', 'Unlimited staff training', 'Lifetime updates & upgrades'],
   },
 ];
 
@@ -126,4 +144,60 @@ export const TESTIMONIALS: Testimonial[] = [
     text: 'Their complete business suite helped us go digital. Website, app, and systems all working perfectly together.',
     rating: 5,
   },
+];
+
+export const PRICING_PLANS = [
+  {
+    name: 'Starter',
+    price: 199,
+    description: 'Perfect for small businesses just getting started',
+    features: [
+      'Single system (POS or Billing)',
+      'Basic setup & configuration',
+      '1 staff training session',
+      '6 months WhatsApp support',
+      'Free bug fixes',
+    ],
+    highlight: false,
+    cta: 'Get Started',
+  },
+  {
+    name: 'Business',
+    price: 499,
+    description: 'Most popular for growing businesses',
+    features: [
+      'POS + Billing system',
+      'Full setup & configuration',
+      '3 staff training sessions',
+      '12 months WhatsApp support',
+      'Free updates & upgrades',
+      'Custom branding',
+    ],
+    highlight: true,
+    cta: 'Most Popular',
+  },
+  {
+    name: 'Enterprise',
+    price: 1299,
+    description: 'Complete solution for established businesses',
+    features: [
+      'POS + Billing + Website + App',
+      'Full system integration',
+      'Unlimited training sessions',
+      'Lifetime WhatsApp support',
+      'Priority response',
+      'Custom features on request',
+    ],
+    highlight: false,
+    cta: 'Go Enterprise',
+  },
+];
+
+export const CLIENTS = [
+  { name: 'Client 1', logo: '/clients/client-1.png' },
+  { name: 'Client 2', logo: '/clients/client-2.png' },
+  { name: 'Client 3', logo: '/clients/client-3.png' },
+  { name: 'Client 4', logo: '/clients/client-4.png' },
+  { name: 'Client 5', logo: '/clients/client-5.png' },
+  { name: 'Client 6', logo: '/clients/client-6.png' },
 ];
