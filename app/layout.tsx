@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'IPYNB.site | Sri Lanka\'s Premier Jupyter Notebook & Business Solutions',
-  description: 'Discover premium Jupyter notebooks, POS systems, billing solutions, and business websites crafted for Sri Lankan enterprises. 500+ businesses trust us. 24/7 support.',
-  keywords: 'Jupyter notebooks, POS systems, billing solutions, business websites, Sri Lanka',
+  title: 'IPYNB Solutions | Bespoke Business Systems for Sri Lankan Enterprises',
+  description: 'We architect custom POS systems, billing platforms, and business websites for Sri Lankan enterprises. Engineering-led. Lifetime ownership. 24/7 support.',
+  keywords: 'POS system Sri Lanka, billing system, business website, custom software Sri Lanka, IPYNB Solutions',
   authors: [{ name: 'IPYNB.site' }],
   icons: {
     icon: '/logo.png',

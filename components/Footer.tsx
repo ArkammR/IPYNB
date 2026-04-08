@@ -1,50 +1,45 @@
-export default function Footer() {
-  return (
-    <footer className="bg-gradient-to-r from-green-900 to-emerald-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Grid */}
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="font-bold mb-4 text-amber-300">Solutions</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#solutions" className="text-white/70 hover:text-amber-300 transition-colors">POS Systems</a></li>
-              <li><a href="#solutions" className="text-white/70 hover:text-amber-300 transition-colors">Billing Systems</a></li>
-              <li><a href="#solutions" className="text-white/70 hover:text-amber-300 transition-colors">Business Websites</a></li>
-              <li><a href="#pricing" className="text-white/70 hover:text-amber-300 transition-colors">Pricing</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4 text-amber-300">Support</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">FAQ</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Community</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4 text-amber-300">Company</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">About Us</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold mb-4 text-amber-300">Connect</h3>
-            <ul className="space-y-2 text-sm">
-          <li><a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} className="text-white/70 hover:text-amber-300 transition-colors">WhatsApp Us</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Email: hello@ipynb.site</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">Twitter</a></li>
-              <li><a href="#" className="text-white/70 hover:text-amber-300 transition-colors">LinkedIn</a></li>
-            </ul>
-          </div>
-        </div>
+'use client';
 
-        {/* Bottom */}
-        <div className="border-t border-white/10 pt-8 text-center text-sm text-white/60">
-          <p>Made with ❤️ for businesses in Sri Lanka | © 2025 IPYNB.site. All rights reserved.</p>
+import { WHATSAPP_NUMBER } from '@/lib/constants';
+import { openWhatsApp } from '@/lib/utils';
+
+export default function Footer() {
+  const handleCTA = () => {
+    openWhatsApp("Hi! I'd like to replace my manual system with a custom IPYNB solution.", WHATSAPP_NUMBER);
+  };
+
+  return (
+    <footer className="bg-brandNavy text-white">
+      {/* CTA Block */}
+      <div className="max-w-4xl mx-auto px-6 py-32 text-center">
+        <h2 className="font-display font-bold text-4xl lg:text-5xl tracking-tight mb-6">
+          Ready to Replace Your<br />
+          <span className="text-brandTeal">Ledger with a System?</span>
+        </h2>
+        <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
+          Bespoke builds starting from LKR 65,000. No monthly fees. Lifetime support.
+        </p>
+        <button
+          onClick={handleCTA}
+          className="bg-brandTeal text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-teal-600 transition-colors"
+        >
+          Chat on WhatsApp
+        </button>
+      </div>
+
+      {/* Footer Links */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-display font-bold text-white">
+            IPYNB <span className="text-brandTeal">Solutions</span>
+          </p>
+          <div className="flex gap-8 text-sm text-slate-400">
+            <a href="#" className="hover:text-white transition-colors">Support</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Documentation</a>
+          </div>
+          <p className="text-slate-500 text-sm">© 2026 IPYNB Solutions. Made with ❤️ for Sri Lankan Business.</p>
         </div>
       </div>
     </footer>

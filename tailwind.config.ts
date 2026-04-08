@@ -8,18 +8,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: '#0A2540',
+        brandNavy: '#0F172A',
+        brandTeal: '#008B8B',
+        brandGray: '#F8FAFC',
+        slateText: '#475569',
+        // keep legacy colors for any remaining refs
+        navy: '#0F172A',
         orange: '#FF6B00',
         whatsapp: '#25D366',
-        bg: '#F8F9FA',
+        bg: '#F8FAFC',
         grid: '#E5E5E5',
-        'sri-green': '#1a472a',
-        'sri-gold': '#d4af37',
-        'sri-amber': '#f59e0b',
       },
       fontFamily: {
-        inter: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        grotesk: ['Space Grotesk', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        display: ['Montserrat', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        grotesk: ['Montserrat', 'sans-serif'],
       },
       animation: {
         float: 'float 6s ease-in-out infinite',

@@ -149,7 +149,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const PRICING_PLANS = [
   {
     name: 'Starter',
-    price: 199,
+    price: 65000,
     description: 'Perfect for small businesses just getting started',
     features: [
       'Single system (POS or Billing)',
@@ -159,11 +159,10 @@ export const PRICING_PLANS = [
       'Free bug fixes',
     ],
     highlight: false,
-    cta: 'Get Started',
   },
   {
     name: 'Business',
-    price: 499,
+    price: 145000,
     description: 'Most popular for growing businesses',
     features: [
       'POS + Billing system',
@@ -174,11 +173,10 @@ export const PRICING_PLANS = [
       'Custom branding',
     ],
     highlight: true,
-    cta: 'Most Popular',
   },
   {
     name: 'Enterprise',
-    price: 1299,
+    price: 395000,
     description: 'Complete solution for established businesses',
     features: [
       'POS + Billing + Website + App',
@@ -189,7 +187,6 @@ export const PRICING_PLANS = [
       'Custom features on request',
     ],
     highlight: false,
-    cta: 'Go Enterprise',
   },
 ];
 

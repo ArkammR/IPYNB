@@ -1,25 +1,29 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Clients from '@/components/Clients';
-import HowItWorks from '@/components/HowItWorks';
-import Products from '@/components/Products';
+import Problem from '@/components/Problem';
+import Industries from '@/components/Industries';
+import Comparison from '@/components/Comparison';
+import Process from '@/components/Process';
+import Deployments from '@/components/Deployments';
 import Pricing from '@/components/Pricing';
-import Services from '@/components/Services';
-import Testimonials from '@/components/Testimonials';
+import About from '@/components/About';
 import Footer from '@/components/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <Clients />
-      <HowItWorks />
-      <Products />
+      <Problem />
+      <Industries />
+      <Comparison />
+      <Process />
+      <Deployments />
       <Pricing />
-      <Services />
-      <Testimonials />
+      <About />
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 }
