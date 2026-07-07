@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: '#work', label: 'Our Work' },
   { href: '#process', label: 'Process' },
   { href: '#pricing', label: 'Pricing' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
