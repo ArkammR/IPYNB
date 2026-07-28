@@ -1,36 +1,300 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap');
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ═══════════════════════════════════════════════════════════════════════
+   PALETTE
+   Background canvas : #F2F3FF  very light indigo-white
+   Dark surfaces     : #0D1117  near-black (hero, footer, dark cards)
+   Accent            : #6366F1  indigo
+   Accent light      : #818CF8  indigo-400
+   Accent deep       : #4F46E5  indigo-700
+   Body text (light) : #1E1B4B  deep indigo-950 (on light bg)
+   Body text (muted) : #4B5563  gray-600
+   ═══════════════════════════════════════════════════════════════════════ */
+:root {
+  --color-brand-dark:   13  17  23;     /* #0D1117 */
+  --color-brand-accent: 99  102 241;    /* #6366F1 */
+  --color-brand-light:  129 140 248;    /* #818CF8 */
+
+  /* Section overlay opacities */
+  --section-light-bg:   rgba(242, 243, 255, 0.55);
+  --section-alt-bg:     rgba(230, 232, 255, 0.45);
+  --section-dark-bg:    rgba(13,  17,  23,  0.94);
+  --card-bg:            rgba(255, 255, 255, 0.72);
+  --card-border:        rgba(99, 102, 241, 0.12);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  color: #0F172A;
-  background: #FFFFFF;
+  /* Transparent — global background canvas shows through */
+  background: transparent;
+  color: #1E1B4B;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+/* ─── Section background helpers ───────────────────────────────────────
+   Instead of opaque colors, sections use semi-transparent overlays so
+   the animated background canvas bleeds through everywhere.
+   ─────────────────────────────────────────────────────────────────── */
+
+/* Light section — warm indigo tint */
+.section-light {
+  background: var(--section-light-bg);
+  backdrop-filter: blur(0px);
 }
 
+/* Alternate light section — slightly more tinted */
+.section-alt {
+  background: var(--section-alt-bg);
+}
+
+/* Dark section (hero, footer, pricing, industries) */
+.section-dark {
+  background: var(--section-dark-bg);
+  backdrop-filter: blur(2px);
+}
+
+/* Card surface */
+.card-surface {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Scroll reveal ─────────────────────────────────────────────────── */
+.reveal        { opacity: 0; transform: translateY(32px);  transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left   { opacity: 0; transform: translateX(-32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-left.visible  { opacity: 1; transform: translateX(0); }
+.reveal-right  { opacity: 0; transform: translateX(32px);  transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale  { opacity: 0; transform: scale(0.92);       transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Stagger delays */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+.delay-600 { transition-delay: 0.6s; }
+.delay-700 { transition-delay: 0.7s; }
+.delay-800 { transition-delay: 0.8s; }
+
+/* ─── Keyframes ─────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-16px); }
+}
 @keyframes marquee {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 24px rgba(99,102,241,0.35); }
+  50%      { box-shadow: 0 0 56px rgba(99,102,241,0.70); }
+}
+@keyframes slide-up-fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes number-count {
+  from { opacity: 0; transform: scale(0.5) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes orb-drift {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%     { transform: translate(30px,-20px) scale(1.08); }
+  66%     { transform: translate(-20px,15px) scale(0.96); }
+}
+@keyframes dot-pulse {
+  0%,100% { opacity: 0.05; }
+  50%     { opacity: 0.18; }
+}
 
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-marquee { animation: marquee 30s linear infinite; }
+/* ─── Animation utility classes ─────────────────────────────────────── */
+.animate-float       { animation: float 6s ease-in-out infinite; }
+.animate-marquee     { animation: marquee 30s linear infinite; }
+.animate-spin-slow   { animation: spin-slow 12s linear infinite; }
+.animate-gradient-x  { background-size: 200% 200%; animation: gradient-x 4s ease infinite; }
+.animate-glow-pulse  { animation: glow-pulse 2s ease-in-out infinite; }
+.animate-slide-up    { animation: slide-up-fade 0.6s ease forwards; }
+.animate-number      { animation: number-count 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+/* ─── Glassmorphism ─────────────────────────────────────────────────── */
+/* On dark sections */
+.glass {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+/* On light sections */
+.glass-light {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(99,102,241,0.14);
+  box-shadow: 0 4px 24px rgba(99,102,241,0.06);
+}
+.glass-dark {
+  background: rgba(13,17,23,0.74);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+/* Indigo-tinted glass */
+.glass-accent, .glass-teal {
+  background: rgba(99,102,241,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99,102,241,0.20);
+}
+
+/* ─── Gradient text ─────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #6366F1 0%, #818CF8 50%, #4F46E5 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ─── Dot-grid ──────────────────────────────────────────────────────── */
+/* These are supplemental — the canvas in SiteBackground IS the primary grid */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(99,102,241,0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.dot-grid-light {
+  background-image: radial-gradient(circle, rgba(99,102,241,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ─── Glow utilities ────────────────────────────────────────────────── */
+.teal-glow, .accent-glow       { box-shadow: 0 0 28px rgba(99,102,241,0.35), 0 0 60px rgba(99,102,241,0.12); }
+.teal-glow-sm, .accent-glow-sm { box-shadow: 0 0 14px rgba(99,102,241,0.28); }
+.teal-glow-lg, .accent-glow-lg { box-shadow: 0 0 60px rgba(99,102,241,0.42), 0 0 120px rgba(99,102,241,0.15); }
+
+/* ─── Hero mesh ─────────────────────────────────────────────────────── */
+/* Hero still uses a solid dark bg since it's the dark intro section */
+.hero-mesh {
+  background-color: #0D1117;
+  background-image:
+    radial-gradient(at 18% 48%, rgba(99,102,241,0.20)  0px, transparent 55%),
+    radial-gradient(at 80% 18%, rgba(79,70,229,0.14)   0px, transparent 50%),
+    radial-gradient(at 50% 82%, rgba(129,140,248,0.09) 0px, transparent 45%);
+}
+
+/* ─── Border gradient cards ─────────────────────────────────────────── */
+.border-gradient {
+  background: linear-gradient(#0D1117, #0D1117) padding-box,
+              linear-gradient(135deg, rgba(99,102,241,0.55), rgba(99,102,241,0.10)) border-box;
+  border: 1px solid transparent;
+}
+.border-gradient-light {
+  background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)) padding-box,
+              linear-gradient(135deg, rgba(99,102,241,0.40), rgba(99,102,241,0.05)) border-box;
+  border: 1px solid transparent;
+  backdrop-filter: blur(12px);
+}
+
+/* ─── Card hover ────────────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px rgba(99,102,241,0.14), 0 8px 20px rgba(13,17,23,0.06);
+}
+
+/* ─── Animated underline ────────────────────────────────────────────── */
+.underline-animate { position: relative; }
+.underline-animate::after {
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, #6366F1, #818CF8);
+  transition: width 0.3s ease; border-radius: 2px;
+}
+.underline-animate:hover::after { width: 100%; }
+
+/* ─── Mobile menu backdrop ──────────────────────────────────────────── */
+.menu-overlay {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #F2F3FF; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#6366F1, #4F46E5); border-radius: 4px; }
+
+/* ─── Text selection ────────────────────────────────────────────────── */
+::selection { background: rgba(99,102,241,0.22); color: #1E1B4B; }
+
+/* ─── Light section overrides ───────────────────────────────────────── 
+   bg-white / bg-brandGray / bg-white in components should be translucent
+   so the background shows through. Override here globally.
+   ─────────────────────────────────────────────────────────────────── */
+/* Light section wrappers become frosted glass panels */
+.section-wrapper-light {
+  background: rgba(242, 243, 255, 0.60);
+  backdrop-filter: blur(1px);
+}
+.section-wrapper-alt {
+  background: rgba(235, 236, 255, 0.50);
+}
+
+/* White cards on light sections */
+.bg-white {
+  background: rgba(255,255,255,0.75) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* brandGray sections */
+.bg-brandGray {
+  background: rgba(230,232,255,0.45) !important;
+  backdrop-filter: blur(1px);
+}
+
+/* Pure white page bg for privacy/terms */
+.bg-white-solid {
+  background: #ffffff !important;
+}
+
+/* ─── Noise overlay utility ─────────────────────────────────────────── */
+.noise::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
