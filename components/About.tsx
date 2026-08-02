@@ -104,7 +104,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="py-32 bg-brandGray/60 backdrop-blur-sm relative overflow-hidden" ref={ref}>
+    <section className="py-32 bg-transparent relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 dot-grid opacity-[0.03]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -118,15 +118,15 @@ export default function About() {
             <span className="inline-block text-brandTeal text-xs font-bold uppercase tracking-widest mb-6 px-4 py-2 rounded-full bg-brandTeal/10 border border-brandTeal/20">
               About IPYNB Solutions
             </span>
-            <h2 className="font-display font-black text-5xl lg:text-6xl text-brandNavy tracking-tight mb-8 leading-tight">
+            <h2 className="font-display font-black text-5xl lg:text-6xl text-white tracking-tight mb-8 leading-tight">
               Engineering-Led.
               <br />
               <span className="gradient-text">Results-Focused.</span>
             </h2>
-            <p className="text-slateText text-lg leading-relaxed mb-6">
+            <p className="text-slate-400 text-lg leading-relaxed mb-6">
               IPYNB Solutions is a specialized business software agency dedicated to modernizing the manual workflows of Sri Lankan enterprises. We bridge the gap between complex engineering and everyday usability.
             </p>
-            <p className="text-slateText text-lg leading-relaxed mb-10">
+            <p className="text-slate-400 text-lg leading-relaxed mb-10">
               Every system we architect is grounded in international-grade technical standards. We don't just build software — we analyze your operations, identify your bottlenecks, and engineer a solution that removes them permanently.
             </p>
 
@@ -134,12 +134,12 @@ export default function About() {
             <div className="flex items-center gap-6">
               {STATS.map((stat, i) => (
                 <div key={i} className="flex items-center gap-6">
-                  {i > 0 && <div className="w-px h-12 bg-slate-200" />}
+                  {i > 0 && <div className="w-px h-12 bg-white/10" />}
                   <div className="text-center">
-                    <div className="font-display font-black text-4xl text-brandNavy">
+                    <div className="font-display font-black text-4xl text-white">
                       <AnimatedCounter target={stat.target} suffix={stat.suffix} isInView={isInView} />
                     </div>
-                    <div className="text-slateText text-sm mt-1">{stat.label}</div>
+                    <div className="text-slate-400 text-sm mt-1">{stat.label}</div>
                   </div>
                 </div>
               ))}
@@ -155,14 +155,14 @@ export default function About() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
                 whileHover={{ x: 4 }}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-100 shadow-[0_4px_20px_rgba(13,17,23,0.04)] flex items-start gap-5 group transition-all"
+                className="bg-transparent rounded-2xl p-6 border border-white/10 shadow-[0_4px_20px_rgba(13,17,23,0.04)] flex items-start gap-5 group transition-all"
               >
-                <div className="w-12 h-12 rounded-2xl bg-brandNavy/5 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-brandTeal/10 transition-colors">
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-2xl flex-shrink-0 group-hover:bg-indigo-500/10 transition-colors">
                   {v.icon}
                 </div>
                 <div>
-                  <h3 className="font-display font-black text-lg text-brandNavy mb-2">{v.title}</h3>
-                  <p className="text-slateText text-sm leading-relaxed">{v.body}</p>
+                  <h3 className="font-display font-black text-lg text-white mb-2">{v.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{v.body}</p>
                 </div>
               </motion.div>
             ))}
@@ -174,7 +174,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 border border-slate-100 shadow-[0_4px_20px_rgba(13,17,23,0.04)]"
+          className="bg-transparent rounded-3xl p-10 border border-white/10 shadow-[0_4px_20px_rgba(13,17,23,0.04)]"
         >
           <p className="text-center text-xs font-black uppercase tracking-widest text-slate-400 mb-8">
             Built With Industry-Standard Technologies
@@ -195,7 +195,7 @@ export default function About() {
                 <div className="opacity-60 group-hover:opacity-100 transition-opacity">
                   {tech.svg}
                 </div>
-                <span className="text-xs font-semibold text-slate-400 group-hover:text-brandNavy transition-colors">{tech.name}</span>
+                <span className="text-xs font-semibold text-slate-400 group-hover:text-white transition-colors">{tech.name}</span>
               </motion.div>
             ))}
           </motion.div>

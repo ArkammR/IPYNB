@@ -28,7 +28,7 @@ function Field({ label, required, error, children }: { label:string; required?:b
 }
 
 const inputStyle = (err?:boolean) =>
-  `w-full px-4 py-3 rounded-xl text-sm font-medium text-slate-900 bg-white border outline-none transition-all placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 ${err ? 'border-red-400 bg-red-50' : 'border-slate-200 hover:border-indigo-300'}`;
+  `w-full px-4 py-3 rounded-xl text-sm font-medium text-white bg-white/8 border outline-none transition-all placeholder:text-slate-500 text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${err ? 'border-red-400 bg-red-50' : 'border-white/10 hover:border-indigo-300'}`;
 
 /* ─── Main component ─────────────────────────────────────────────────── */
 export default function Contact() {
@@ -77,7 +77,7 @@ export default function Contact() {
       id="contact"
       ref={sectionRef}
       className="relative py-28 overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #eef0ff 0%, #f0f2ff 50%, #e8ebff 100%)' }}
+      style={{ background: "transparent" }}
     >
       {/* dot grid overlay */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage:'radial-gradient(circle, rgba(99,102,241,0.13) 1px, transparent 1px)', backgroundSize:'30px 30px' }} />
@@ -91,7 +91,7 @@ export default function Contact() {
           <span className="inline-block text-[11px] font-black uppercase tracking-widest px-4 py-2 rounded-full mb-5" style={{ background:'rgba(99,102,241,0.10)', color:'#6366F1', border:'1px solid rgba(99,102,241,0.25)' }}>
             Start Your Project
           </span>
-          <h2 className="font-display font-black text-5xl lg:text-6xl tracking-tight mb-5 leading-[1.08]" style={{ color:'#0D1117' }}>
+          <h2 className="font-display font-black text-5xl lg:text-6xl tracking-tight mb-5 leading-[1.08]" style={{ color:'#ffffff' }}>
             Let&rsquo;s Build Something<br/>
             <span className="gradient-text">That Moves the Needle.</span>
           </h2>
@@ -115,22 +115,22 @@ export default function Contact() {
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity:0, y:12 }} animate={inView?{opacity:1,y:0}:{}} transition={{ delay:0.15+i*0.08 }}
                 className="flex items-center gap-4 mb-3 rounded-2xl p-4 border transition-all hover:border-indigo-300 group"
-                style={{ background:'rgba(255,255,255,0.85)', borderColor:'rgba(99,102,241,0.15)', backdropFilter:'blur(8px)' }}>
+                style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(99,102,241,0.20)', backdropFilter:'blur(8px)' }}>
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style={{ background:'rgba(99,102,241,0.10)' }}>
                   {item.emoji}
                 </div>
                 <div>
                   <div className="text-[10px] font-black uppercase tracking-widest mb-0.5" style={{ color:'#94a3b8' }}>{item.label}</div>
                   {item.href
-                    ? <a href={item.href} className="font-bold text-sm transition-colors hover:text-indigo-600" style={{ color:'#0D1117' }}>{item.value}</a>
-                    : <span className="font-bold text-sm" style={{ color:'#0D1117' }}>{item.value}</span>
+                    ? <a href={item.href} className="font-bold text-sm transition-colors hover:text-indigo-600" style={{ color:'#ffffff' }}>{item.value}</a>
+                    : <span className="font-bold text-sm" style={{ color:'#ffffff' }}>{item.value}</span>
                   }
                 </div>
               </motion.div>
             ))}
 
             {/* what happens next */}
-            <div className="mt-6 rounded-3xl p-8 relative overflow-hidden border" style={{ background:'#0D1117', borderColor:'rgba(99,102,241,0.20)' }}>
+            <div className="mt-6 rounded-3xl p-8 relative overflow-hidden border" style={{ background:'#ffffff', borderColor:'rgba(99,102,241,0.20)' }}>
               <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none" style={{ background:'radial-gradient(circle, rgba(99,102,241,0.20) 0%, transparent 70%)' }} />
               <h3 className="font-display font-black text-lg text-white mb-6 relative z-10">What Happens Next</h3>
               <div className="space-y-4 relative z-10">
@@ -152,7 +152,7 @@ export default function Contact() {
           {/* ── RIGHT — FORM ── */}
           <motion.div initial={{ opacity:0, x:24 }} animate={inView?{opacity:1,x:0}:{}} transition={{ duration:0.6, delay:0.2 }}
             className="rounded-3xl p-8 border"
-            style={{ background:'rgba(255,255,255,0.92)', borderColor:'rgba(99,102,241,0.18)', backdropFilter:'blur(16px)', boxShadow:'0 24px 64px rgba(99,102,241,0.12)' }}>
+            style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(99,102,241,0.20)', backdropFilter:'blur(16px)', boxShadow:'0 24px 64px rgba(99,102,241,0.12)' }}>
 
             <AnimatePresence mode="wait">
               {status === 'success' ? (
@@ -162,7 +162,7 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
                     </svg>
                   </div>
-                  <h3 className="font-display font-black text-3xl mb-3" style={{ color:'#0D1117' }}>Inquiry Received!</h3>
+                  <h3 className="font-display font-black text-3xl mb-3" style={{ color:'#ffffff' }}>Inquiry Received!</h3>
                   <p className="text-sm leading-relaxed mb-8 max-w-xs mx-auto" style={{ color:'#4B5563' }}>
                     We&rsquo;ve got your message. Check your inbox — we sent you a confirmation email and will reply within 24 hours.
                   </p>
@@ -227,7 +227,7 @@ export default function Contact() {
                     <motion.button type="submit" disabled={status==='loading'}
                       whileHover={{ scale:1.02 }} whileTap={{ scale:0.97 }}
                       className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-black text-sm text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                      style={{ background:'#0D1117' }}>
+                      style={{ background:'#ffffff' }}>
                       {status === 'loading' ? (
                         <><svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>Sending…</>
                       ) : (

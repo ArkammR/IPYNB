@@ -97,7 +97,7 @@ export default function Problem() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="py-32 bg-white/70 backdrop-blur-sm relative overflow-hidden">
+    <section className="py-32 bg-transparent relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 dot-grid opacity-[0.03]" />
 
@@ -112,12 +112,12 @@ export default function Problem() {
           <span className="inline-block text-brandTeal text-xs font-bold uppercase tracking-widest mb-4 px-4 py-2 rounded-full bg-brandTeal/10 border border-brandTeal/20">
             The Real Cost of Manual Operations
           </span>
-          <h2 className="font-display font-black text-5xl lg:text-6xl text-brandNavy tracking-tight mb-6 leading-tight">
+          <h2 className="font-display font-black text-5xl lg:text-6xl text-white tracking-tight mb-6 leading-tight">
             Every Day Without a System
             <br />
             <span className="gradient-text">is Revenue You're Losing.</span>
           </h2>
-          <p className="text-slateText text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-xl max-w-2xl mx-auto leading-relaxed">
             We've analyzed hundreds of Sri Lankan businesses. The pattern is always the same — manual processes silently drain profit month after month.
           </p>
         </motion.div>
@@ -147,22 +147,22 @@ export default function Problem() {
                 style={{ background: 'radial-gradient(ellipse at top, rgba(99,102,241,0.04) 0%, transparent 70%)' }} />
 
               {/* Pain tag */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-100 mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{card.pain}</span>
+                <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">{card.pain}</span>
                 <span className="text-xs text-red-500 font-semibold ml-1">{card.impact}</span>
               </div>
 
               {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-brandNavy flex items-center justify-center text-brandTeal mb-6 shadow-lg">
+              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-brandTeal mb-6 shadow-lg">
                 {card.icon}
               </div>
 
-              <h3 className="font-display font-black text-xl text-brandNavy mb-4 leading-tight">{card.title}</h3>
-              <p className="text-slateText leading-relaxed mb-8 text-sm">{card.body}</p>
+              <h3 className="font-display font-black text-xl text-white mb-4 leading-tight">{card.title}</h3>
+              <p className="text-slate-400 leading-relaxed mb-8 text-sm">{card.body}</p>
 
               {/* Business impact stat — animated counter */}
-              <div className="border-t border-slate-100 pt-6">
+              <div className="border-t border-white/10 pt-6">
                 <div className={`font-display font-black text-4xl mb-1 ${card.statColor}`}>
                   <AnimatedCounter target={card.stat} suffix={card.statSuffix} isInView={isInView} />
                 </div>
@@ -179,7 +179,7 @@ export default function Problem() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="text-center mt-16"
         >
-          <p className="text-slateText text-lg">
+          <p className="text-slate-400 text-lg">
             Sound familiar?{' '}
             <a href="#contact" className="text-brandTeal font-bold hover:underline underline-animate">
               Let's fix it — starting this week.

@@ -71,19 +71,16 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group">
-            <motion.div
-              whileHover={{ rotate: 5, scale: 1.1 }}
-              className="w-9 h-9 rounded-xl bg-brandTeal flex items-center justify-center shadow-[0_0_16px_rgba(99,102,241,0.5)] group-hover:shadow-[0_0_28px_rgba(99,102,241,0.10)] transition-shadow"
-            >
-              <Image src="/logo.png" alt="IPYNB" width={22} height={22} className="object-contain" />
-            </motion.div>
-            <span className="font-display font-black text-lg text-white tracking-tight">
-              IPYNB <span>Solutions</span>
-            </span>
+          <a href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="IPYNB"
+              width={36}
+              height={36}
+              className="object-contain transition-transform duration-200 hover:scale-110"
+            />
           </a>
 
-          Desktop Nav
           <ul className="hidden md:flex gap-1 list-none">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>

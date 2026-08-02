@@ -47,7 +47,7 @@ export default function Comparison() {
   const isInView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="py-32 bg-brandGray/60 backdrop-blur-sm relative overflow-hidden" ref={ref}>
+    <section className="py-32 bg-transparent relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 dot-grid opacity-[0.03]" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -61,12 +61,12 @@ export default function Comparison() {
           <span className="inline-block text-brandTeal text-xs font-bold uppercase tracking-widest mb-4 px-4 py-2 rounded-full bg-brandTeal/10 border border-brandTeal/20">
             Why Choose IPYNB
           </span>
-          <h2 className="font-display font-black text-5xl lg:text-6xl text-brandNavy tracking-tight mb-6">
+          <h2 className="font-display font-black text-5xl lg:text-6xl text-white tracking-tight mb-6">
             The Difference is in
             <br />
             <span className="gradient-text">How We Build.</span>
           </h2>
-          <p className="text-slateText text-xl max-w-xl mx-auto">
+          <p className="text-slate-400 text-xl max-w-xl mx-auto">
             Most providers sell you a product. We engineer you a competitive advantage.
           </p>
         </motion.div>
@@ -76,18 +76,18 @@ export default function Comparison() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-100 shadow-[0_30px_60px_rgba(13,17,23,0.08)]"
+          className="bg-transparent rounded-3xl overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(13,17,23,0.08)]"
         >
           {/* Column headers */}
-          <div className="grid grid-cols-[1fr_2fr_2fr_auto] border-b border-slate-100">
+          <div className="grid grid-cols-[1fr_2fr_2fr_auto] border-b border-white/10">
             <div className="px-6 py-5 text-xs font-bold uppercase tracking-widest text-slate-400">Category</div>
-            <div className="px-6 py-5 flex items-center gap-3 border-l border-slate-100">
-              <div className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center">
+            <div className="px-6 py-5 flex items-center gap-3 border-l border-white/10">
+              <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center">
                 <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
               </div>
-              <span className="font-bold text-sm text-slate-500">Standard Providers</span>
+              <span className="font-bold text-sm text-slate-300">Standard Providers</span>
             </div>
             <div className="px-6 py-5 bg-brandTeal/5 border-l-2 border-brandTeal flex items-center gap-3">
               <div className="w-7 h-7 rounded-lg bg-brandTeal flex items-center justify-center">
@@ -123,13 +123,13 @@ export default function Comparison() {
                 <div className="px-6 py-5 flex items-center">
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{row.category}</span>
                 </div>
-                <div className="px-6 py-5 border-l border-slate-100 flex items-center gap-3">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-50 flex items-center justify-center">
+                <div className="px-6 py-5 border-l border-white/10 flex items-center gap-3">
+                  <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-900/20 flex items-center justify-center">
                     <svg className="w-3 h-3 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </span>
-                  <span className="text-slateText text-sm">{row.them}</span>
+                  <span className="text-slate-400 text-sm">{row.them}</span>
                 </div>
                 <div className="px-6 py-5 bg-brandTeal/5 border-l-2 border-brandTeal flex items-center gap-3">
                   <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brandTeal/15 flex items-center justify-center">
@@ -137,7 +137,7 @@ export default function Comparison() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span className="text-brandNavy text-sm font-semibold">{row.us}</span>
+                  <span className="text-white text-sm font-semibold">{row.us}</span>
                 </div>
                 <div className="px-4 py-5 bg-brandTeal/5 border-l border-brandTeal/10 flex items-center justify-center">
                   <span className="font-display font-black text-sm text-brandTeal whitespace-nowrap bg-brandTeal/10 px-2 py-1 rounded-lg">
@@ -156,7 +156,7 @@ export default function Comparison() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-10 text-center"
         >
-          <p className="text-slateText text-sm">
+          <p className="text-slate-400 text-sm">
             Still using a generic system?{' '}
             <a href="#contact" className="text-brandTeal font-bold underline-animate">
               Let's show you what custom looks like.

@@ -105,19 +105,19 @@ function DeploymentRow({ d, i, isInView }: { d: typeof DEPLOYMENTS[0]; i: number
             <span className="text-brandTeal text-xs font-bold uppercase tracking-wider">Live System</span>
             <TypingDots />
           </span>
-          <span className="text-slateText text-xs font-medium border border-slate-200 rounded-full px-3 py-1.5">{d.tag}</span>
+          <span className="text-slate-400 text-xs font-medium border border-white/10 rounded-full px-3 py-1.5">{d.tag}</span>
         </div>
 
-        <h3 className="font-display font-black text-4xl text-brandNavy mb-3 leading-tight">{d.name}</h3>
+        <h3 className="font-display font-black text-4xl text-white mb-3 leading-tight">{d.name}</h3>
         <p className="text-brandTeal font-bold text-lg mb-4">{d.headline}</p>
-        <p className="text-slateText leading-relaxed mb-8">{d.body}</p>
+        <p className="text-slate-400 leading-relaxed mb-8">{d.body}</p>
 
         {/* Highlight metrics */}
         <div className="grid grid-cols-2 gap-3 mb-8">
           {d.highlights.map((h, j) => (
             <div key={j} className="border-gradient-light rounded-xl p-4">
-              <div className="text-slateText text-xs font-medium mb-1">{h.label}</div>
-              <div className="font-display font-black text-xl text-brandNavy">{h.value}</div>
+              <div className="text-slate-400 text-xs font-medium mb-1">{h.label}</div>
+              <div className="font-display font-black text-xl text-white">{h.value}</div>
             </div>
           ))}
         </div>
@@ -132,7 +132,7 @@ function DeploymentRow({ d, i, isInView }: { d: typeof DEPLOYMENTS[0]; i: number
             </div>
             <div>
               <div className="text-xs font-bold uppercase tracking-wide text-brandTeal mb-1">Business Result</div>
-              <p className="text-brandNavy font-semibold text-sm">{d.result}</p>
+              <p className="text-white font-semibold text-sm">{d.result}</p>
             </div>
           </div>
         </div>
@@ -149,8 +149,8 @@ function DeploymentRow({ d, i, isInView }: { d: typeof DEPLOYMENTS[0]; i: number
         <div className="absolute inset-0 bg-brandTeal/10 blur-3xl rounded-3xl scale-90 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Browser frame */}
-        <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(13,17,23,0.15)] border border-slate-200">
-          <div className="bg-slate-100 px-4 py-3 flex items-center gap-2 border-b border-slate-200">
+        <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_60px_rgba(13,17,23,0.15)] border border-white/10">
+          <div className="bg-slate-100 px-4 py-3 flex items-center gap-2 border-b border-white/10">
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-400" />
               <div className="w-3 h-3 rounded-full bg-yellow-400" />
@@ -187,7 +187,7 @@ export default function Deployments() {
   const isInView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="py-32 bg-white/70 backdrop-blur-sm relative overflow-hidden" id="work" ref={ref}>
+    <section className="py-32 bg-transparent relative overflow-hidden" id="work" ref={ref}>
       <div className="absolute inset-0 dot-grid opacity-[0.025]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -201,12 +201,12 @@ export default function Deployments() {
           <span className="inline-block text-brandTeal text-xs font-bold uppercase tracking-widest mb-4 px-4 py-2 rounded-full bg-brandTeal/10 border border-brandTeal/20">
             Live Deployments
           </span>
-          <h2 className="font-display font-black text-5xl lg:text-6xl text-brandNavy tracking-tight mb-6">
+          <h2 className="font-display font-black text-5xl lg:text-6xl text-white tracking-tight mb-6">
             Real Systems.
             <br />
             <span className="gradient-text">Real Business Impact.</span>
           </h2>
-          <p className="text-slateText text-xl max-w-2xl mx-auto">
+          <p className="text-slate-400 text-xl max-w-2xl mx-auto">
             These aren't demos or mockups. These are live systems running Sri Lankan businesses right now.
           </p>
         </motion.div>

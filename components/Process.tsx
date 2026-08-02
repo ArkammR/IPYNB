@@ -64,7 +64,7 @@ export default function Process() {
   const isInView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="py-32 bg-white/70 backdrop-blur-sm relative overflow-hidden" id="process" ref={ref}>
+    <section className="py-32 bg-transparent relative overflow-hidden" id="process" ref={ref}>
       <div className="absolute inset-0 dot-grid opacity-[0.025]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -78,12 +78,12 @@ export default function Process() {
           <span className="inline-block text-brandTeal text-xs font-bold uppercase tracking-widest mb-4 px-4 py-2 rounded-full bg-brandTeal/10 border border-brandTeal/20">
             Our Process
           </span>
-          <h2 className="font-display font-black text-5xl lg:text-6xl text-brandNavy tracking-tight mb-6">
+          <h2 className="font-display font-black text-5xl lg:text-6xl text-white tracking-tight mb-6">
             From Chaos to Control
             <br />
             <span className="gradient-text">in Four Clear Steps.</span>
           </h2>
-          <p className="text-slateText text-xl max-w-2xl mx-auto">
+          <p className="text-slate-400 text-xl max-w-2xl mx-auto">
             A zero-disruption process that gets your system live while your business keeps running.
           </p>
         </motion.div>
@@ -113,7 +113,7 @@ export default function Process() {
                 className={`w-full text-left rounded-2xl p-6 transition-all duration-300 border group relative ${
                   activeStep === i
                     ? 'bg-brandNavy border-brandTeal/30 shadow-[0_0_30px_rgba(99,102,241,0.1)]'
-                    : 'bg-white border-slate-100 hover:border-brandTeal/20 hover:bg-slate-50/50'
+                    : 'bg-white/10 border-white/10 hover:border-brandTeal/20 hover:bg-slate-50/50'
                 }`}
               >
                 {/* Active step indicator morphs with layoutId */}
@@ -128,7 +128,7 @@ export default function Process() {
 
                 <div className="flex items-start gap-5">
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors ${
-                    activeStep === i ? 'bg-brandTeal text-white' : 'bg-brandNavy/5 text-brandTeal'
+                    activeStep === i ? 'bg-brandTeal text-white' : 'bg-white/10 text-brandTeal'
                   }`}>
                     {step.icon}
                   </div>
@@ -142,7 +142,7 @@ export default function Process() {
                       }`}>{step.subtitle}</span>
                     </div>
                     <h3 className={`font-display font-black text-xl leading-tight ${
-                      activeStep === i ? 'text-white' : 'text-brandNavy'
+                      activeStep === i ? 'text-white' : 'text-white'
                     }`}>{step.title}</h3>
                     {activeStep === i && (
                       <motion.div
@@ -233,7 +233,7 @@ export default function Process() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-100 shadow-[0_4px_20px_rgba(13,17,23,0.05)]"
+              className="bg-transparent rounded-2xl p-6 border border-white/10 shadow-[0_4px_20px_rgba(13,17,23,0.05)]"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-brandTeal/10 flex items-center justify-center text-brandTeal flex-shrink-0">
@@ -241,10 +241,10 @@ export default function Process() {
                 </div>
                 <div>
                   <div className="text-brandTeal text-xs font-bold uppercase tracking-widest mb-1">{step.number} · {step.subtitle}</div>
-                  <h3 className="font-display font-black text-xl text-brandNavy">{step.title}</h3>
+                  <h3 className="font-display font-black text-xl text-white">{step.title}</h3>
                 </div>
               </div>
-              <p className="text-slateText leading-relaxed text-sm mb-4">{step.body}</p>
+              <p className="text-slate-400 leading-relaxed text-sm mb-4">{step.body}</p>
               <div className="flex gap-4 text-xs text-slate-400">
                 <span className="flex items-center gap-1">⏱ {step.duration}</span>
                 <span className="flex items-center gap-1">✓ {step.deliverable}</span>

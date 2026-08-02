@@ -7,9 +7,9 @@ import { openWhatsApp } from '@/lib/utils';
 
 const PLAN_ICONS = ['🚀', '⚡', '🏆'];
 const PLAN_COLORS = [
-  { border: 'border-slate-200', bg: 'bg-white', badge: 'bg-slate-100 text-slate-600' },
+  { border: 'border-white/10', bg: 'bg-white', badge: 'bg-slate-100 text-slate-600' },
   { border: 'border-brandTeal/40', bg: 'bg-brandNavy', badge: 'bg-brandTeal text-white' },
-  { border: 'border-slate-200', bg: 'bg-white', badge: 'bg-brandNavy text-white' },
+  { border: 'border-white/10', bg: 'bg-white', badge: 'bg-brandNavy text-white' },
 ];
 
 // Shimmer sweep that animates around the highlighted card border
@@ -104,10 +104,10 @@ export default function Pricing() {
                   <div className="flex items-start justify-between mb-6">
                     <div>
                       <div className="text-2xl mb-2">{PLAN_ICONS[i]}</div>
-                      <h3 className={`font-display font-black text-2xl ${isHighlight ? 'text-white' : 'text-brandNavy'}`}>
+                      <h3 className={`font-display font-black text-2xl ${isHighlight ? 'text-white' : 'text-white'}`}>
                         {plan.name}
                       </h3>
-                      <p className={`text-sm mt-1 ${isHighlight ? 'text-slate-400' : 'text-slateText'}`}>
+                      <p className={`text-sm mt-1 ${isHighlight ? 'text-slate-400' : 'text-slate-400'}`}>
                         {plan.description}
                       </p>
                     </div>
@@ -121,9 +121,9 @@ export default function Pricing() {
                   {/* Price — spring scale pop on enter */}
                   <div className="mb-8">
                     <div className="flex items-baseline gap-1">
-                      <span className={`text-xs font-bold uppercase tracking-widest ${isHighlight ? 'text-brandTeal' : 'text-slateText'}`}>LKR</span>
+                      <span className={`text-xs font-bold uppercase tracking-widest ${isHighlight ? 'text-brandTeal' : 'text-slate-400'}`}>LKR</span>
                       <motion.span
-                        className={`font-display font-black text-5xl ${isHighlight ? 'text-white' : 'text-brandNavy'}`}
+                        className={`font-display font-black text-5xl ${isHighlight ? 'text-white' : 'text-white'}`}
                         initial={{ opacity: 0, scale: 0.6 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{
@@ -154,11 +154,11 @@ export default function Pricing() {
                         <span className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
                           isHighlight ? 'bg-brandTeal/20' : 'bg-brandNavy/10'
                         }`}>
-                          <svg className={`w-3 h-3 ${isHighlight ? 'text-brandTeal' : 'text-brandNavy'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className={`w-3 h-3 ${isHighlight ? 'text-brandTeal' : 'text-white'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
                         </span>
-                        <span className={`text-sm font-medium ${isHighlight ? 'text-slate-300' : 'text-slateText'}`}>
+                        <span className={`text-sm font-medium ${isHighlight ? 'text-slate-300' : 'text-slate-400'}`}>
                           {feature}
                         </span>
                       </motion.li>
@@ -173,7 +173,7 @@ export default function Pricing() {
                     className={`w-full py-4 rounded-2xl font-black text-sm transition-all flex items-center justify-center gap-2 ${
                       isHighlight
                         ? 'bg-brandTeal text-white hover:bg-indigo-500 teal-glow'
-                        : 'bg-brandNavy/10 text-brandNavy hover:bg-brandNavy hover:text-white border border-brandNavy/15'
+                        : 'bg-brandNavy/10 text-white hover:bg-brandNavy hover:text-white border border-brandNavy/15'
                     }`}
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
