@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { WHATSAPP_NUMBER } from '@/lib/constants';
 import { openWhatsApp } from '@/lib/utils';
 
@@ -9,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center bg-[#080d17] relative overflow-hidden pt-20">
+    <section className="md:min-h-screen flex items-center bg-[#080d17] relative overflow-hidden pt-20">
 
       {/* Background grid pattern */}
       <div
@@ -35,7 +36,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-brandTeal animate-pulse" />
             <span className="text-white/60 text-xs font-medium tracking-widest uppercase">
-              Engineering-led systems · Sri Lanka
+              Custom business software · Sri Lanka
             </span>
           </div>
 
@@ -50,8 +51,8 @@ export default function Hero() {
 
           {/* Subtext */}
           <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-lg">
-            POS, billing, and inventory — engineered for your operation, not a template.
-            One-time payment. Yours forever. No subscriptions, no lock-in.
+            POS, billing and inventory systems set up for the way your shop already runs.
+            Pay once and the system is yours — no monthly subscription.
           </p>
 
           {/* CTAs */}
@@ -70,139 +71,56 @@ export default function Hero() {
               href="#work"
               className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium px-6 py-3.5 rounded-md border border-white/10 hover:border-white/30 transition-all duration-200"
             >
-              View live systems
+              See systems we built
               <span className="text-white/40">→</span>
             </a>
           </div>
 
           {/* Stats */}
-          <div className="flex gap-8 mt-12 pt-8 border-t border-white/10">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 mt-12 pt-8 border-t border-white/10">
             <div>
-              <p className="font-display font-bold text-2xl text-white">12+</p>
-              <p className="text-white/40 text-sm mt-0.5">Systems in production</p>
+              <p className="font-display font-bold text-2xl text-white">LKR 65,000</p>
+              <p className="text-white/40 text-sm mt-0.5">Starting price, one-time</p>
             </div>
             <div>
-              <p className="font-display font-bold text-2xl text-white">100%</p>
-              <p className="text-white/40 text-sm mt-0.5">Owned by clients</p>
+              <p className="font-display font-bold text-2xl text-white">On-site</p>
+              <p className="text-white/40 text-sm mt-0.5">Setup &amp; staff training</p>
             </div>
             <div>
               <p className="font-display font-bold text-2xl text-brandTeal">LKR 0</p>
-              <p className="text-white/40 text-sm mt-0.5">Monthly fees, ever</p>
+              <p className="text-white/40 text-sm mt-0.5">Monthly fees</p>
             </div>
           </div>
         </div>
 
-        {/* ── Right column — Dashboard UI card ── */}
-        <div className="relative flex items-center justify-center">
-
-          {/* Glow behind card */}
+        {/* ── Right column — real client system ── */}
+        <div className="relative">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="w-80 h-80 rounded-full bg-brandTeal/15 blur-[80px]" />
           </div>
 
-          {/* Browser chrome card */}
-          <div className="relative z-10 w-full max-w-md">
-
-            {/* Top label */}
-            <div className="flex items-center gap-2 mb-3 px-1">
-              <span className="text-white/20 text-xs tracking-widest uppercase font-mono">spec · built to your workflow</span>
-            </div>
-
-            {/* Browser frame */}
+          <figure className="relative z-10">
             <div className="bg-[#0f1824] border border-white/10 rounded-xl overflow-hidden shadow-2xl shadow-black/60">
-
-              {/* Browser top bar */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-white/8 bg-[#0c1520]">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
-                </div>
-                <div className="flex-1 mx-3 bg-white/5 rounded-md px-3 py-1 flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full border border-white/20 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-400/80" />
-                  </div>
-                  <span className="text-white/30 text-xs font-mono">onchai.lk/dashboard</span>
-                </div>
+              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10 bg-[#0c1520]">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
               </div>
-
-              {/* Dashboard body */}
-              <div className="p-4 bg-[#0a1118]">
-
-                {/* Header row */}
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <p className="text-white/80 text-sm font-semibold">Dashboard</p>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-400 bg-green-400/10 border border-green-400/20 px-2.5 py-1 rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    LIVE
-                  </span>
-                </div>
-
-                {/* Metric cards */}
-                <div className="grid grid-cols-3 gap-2 mb-4">
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/8">
-                    <p className="text-white/40 text-[10px] mb-1">Sales today</p>
-                    <p className="text-white text-sm font-bold">LKR 284,500</p>
-                    <p className="text-green-400 text-[10px] mt-0.5">+18%</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/8">
-                    <p className="text-white/40 text-[10px] mb-1">Active bills</p>
-                    <p className="text-white text-sm font-bold">47</p>
-                    <p className="text-white/20 text-[10px] mt-0.5">open</p>
-                  </div>
-                  <div className="bg-white/5 rounded-lg p-3 border border-white/8">
-                    <p className="text-white/40 text-[10px] mb-1">Products</p>
-                    <p className="text-white text-sm font-bold">1,204</p>
-                    <p className="text-white/20 text-[10px] mt-0.5">in stock</p>
-                  </div>
-                </div>
-
-                {/* Activity list */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between bg-white/3 rounded-lg px-3 py-2.5 border border-white/6">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
-                      <span className="text-white/60 text-xs">Stock alert</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-white/30 text-xs">3 items low</span>
-                      <span className="text-brandTeal text-xs font-medium cursor-pointer hover:text-brandTeal/80">Restock</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between bg-white/3 rounded-lg px-3 py-2.5 border border-white/6">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                      <span className="text-white/60 text-xs">Bill #04217</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-white/30 text-xs">LKR 12,400</span>
-                      <span className="text-green-400 text-xs font-medium">Paid</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between bg-white/3 rounded-lg px-3 py-2.5 border border-white/6">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                      <span className="text-white/60 text-xs">Daily report</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-white/30 text-xs">Generated 9:29 PM</span>
-                      <span className="text-blue-400 text-xs font-medium">Ready</span>
-                    </div>
-                  </div>
-                </div>
-
+              <div className="relative aspect-[1919/918]">
+                <Image
+                  src="/products/pos-system.png"
+                  alt="Ceylon Chai POS dashboard built by IPYNB"
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
-
-            {/* Bottom label */}
-            <div className="flex items-center gap-2 mt-3 px-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-white/20 text-xs font-mono">uptime-first build</span>
-            </div>
-
-          </div>
+            <figcaption className="text-white/40 text-xs mt-3 px-1">
+              Ceylon Chai POS — a system we built for a Sri Lankan retailer.
+            </figcaption>
+          </figure>
         </div>
 
       </div>

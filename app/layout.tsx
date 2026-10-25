@@ -2,17 +2,17 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'IPYNB Solutions | Bespoke Business Systems for Sri Lankan Enterprises',
-  description: 'We architect custom POS systems, billing platforms, and business websites for Sri Lankan enterprises. Engineering-led. Lifetime ownership. 24/7 support.',
+  title: 'IPYNB Solutions | POS & Billing Systems in Sri Lanka',
+  description: 'Custom POS, billing and inventory systems for Sri Lankan businesses. One-time payment, on-site setup and staff training, WhatsApp support.',
   keywords: 'POS system Sri Lanka, billing system, business website, custom software Sri Lanka, IPYNB Solutions',
-  authors: [{ name: 'IPYNB.site' }],
+  authors: [{ name: 'IPYNB Solutions' }],
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
   },
   openGraph: {
-    title: 'IPYNB.site - Sri Lanka\'s Business Solutions Hub',
-    description: 'Premium Jupyter notebooks and business solutions for Sri Lankan enterprises',
+    title: 'IPYNB Solutions | POS & Billing Systems in Sri Lanka',
+    description: 'Custom POS, billing and inventory systems for Sri Lankan businesses. One-time payment.',
     type: 'website',
     locale: 'en_US',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#1a472a',
+  themeColor: '#080d17',
 };
 
 export default function RootLayout({
@@ -35,8 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#1a472a" />
-        <meta name="mobile-web-app-capable" content="yes" />
+                <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>

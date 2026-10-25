@@ -1,6 +1,6 @@
 'use client';
 
-import { WHATSAPP_NUMBER } from '@/lib/constants';
+import { WHATSAPP_DISPLAY, WHATSAPP_NUMBER } from '@/lib/constants';
 import { openWhatsApp } from '@/lib/utils';
 
 export default function Footer() {
@@ -11,13 +11,12 @@ export default function Footer() {
   return (
     <footer className="bg-brandNavy text-white">
       {/* CTA Block */}
-      <div className="max-w-4xl mx-auto px-6 py-32 text-center">
+      <div className="max-w-4xl mx-auto px-6 py-24 text-center">
         <h2 className="font-display font-bold text-4xl lg:text-5xl tracking-tight mb-6">
-          Ready to Replace Your<br />
-          <span className="text-brandTeal">Ledger with a System?</span>
+          Ready to move off paper?
         </h2>
         <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-          Bespoke builds starting from LKR 65,000. No monthly fees. Lifetime support.
+          Systems from LKR 65,000, one-time. Tell us about your business on WhatsApp.
         </p>
         <button
           onClick={handleCTA}
@@ -33,11 +32,13 @@ export default function Footer() {
           <p className="font-display font-bold text-white">
             IPYNB <span className="text-brandTeal">Solutions</span>
           </p>
-          <div className="flex gap-8 text-sm text-slate-400">
-            <a href="#" className="hover:text-white transition-colors">Support</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Documentation</a>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-slate-400">
+            <a href="#solutions" className="hover:text-white transition-colors">Solutions</a>
+            <a href="#work" className="hover:text-white transition-colors">Our Work</a>
+            <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              WhatsApp {WHATSAPP_DISPLAY}
+            </a>
           </div>
           <p className="text-slate-500 text-sm">© 2026 IPYNB Solutions. Made with ❤️ for Sri Lankan Business.</p>
         </div>

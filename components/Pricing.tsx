@@ -9,7 +9,7 @@ export default function Pricing() {
   };
 
   return (
-    <section className="py-32 bg-white" id="pricing">
+    <section className="py-24 bg-white" id="pricing">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-display font-bold text-4xl lg:text-5xl text-brandNavy tracking-tight mb-4">
@@ -32,7 +32,7 @@ export default function Pricing() {
             >
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brandTeal text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">
-                  MOST POPULAR
+                  RECOMMENDED
                 </div>
               )}
 

@@ -2,35 +2,35 @@ export default function Process() {
   const steps = [
     {
       number: '01',
-      title: 'Workflow Audit',
-      body: 'We study your physical logs and manual bottlenecks to understand exactly where time and money are being lost.',
+      title: 'Visit',
+      body: 'We visit your business, see how you bill and keep stock today, and agree on what the system needs to do.',
     },
     {
       number: '02',
-      title: 'Architecture',
-      body: 'We design custom database logic and system flows specifically engineered for your team and operations.',
+      title: 'Build',
+      body: 'We build the system around your products, prices and staff roles, and show it to you before going live.',
     },
     {
       number: '03',
-      title: 'Deployment',
-      body: 'On-site hardware setup, software installation, and 1-on-1 staff training until your team is confident.',
+      title: 'Set up & train',
+      body: 'We install it at your shop, connect printers and scanners, and train your staff.',
     },
     {
       number: '04',
-      title: 'Evolution',
-      body: 'Continuous updates, new features on request, and instant support via WhatsApp — forever.',
+      title: 'Support',
+      body: 'Questions and fixes over WhatsApp for the support period in your plan, and new features when you need them.',
     },
   ];
 
   return (
-    <section className="py-32 bg-white" id="process">
+    <section className="py-24 bg-white" id="process">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="font-display font-bold text-4xl lg:text-5xl text-brandNavy tracking-tight mb-4">
-            From Chaos to Control<br />in Four Steps.
+            How it works
           </h2>
           <p className="text-slateText text-lg max-w-xl mx-auto">
-            A proven process that gets your system live and your team trained — without disrupting your operations.
+            Four steps from your first message to a working system.
           </p>
         </div>
 
