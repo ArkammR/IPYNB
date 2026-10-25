@@ -25,27 +25,38 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-[1000] transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-100' : 'bg-white/80 backdrop-blur-md'}`}>
+    <nav className={`fixed top-0 w-full z-[1000] transition-all duration-300 ${
+      isScrolled
+        ? 'bg-[#0a0f1a]/95 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20'
+        : 'bg-[#0a0f1a]/80 backdrop-blur-md'
+    }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#" className="font-display font-bold text-xl text-brandNavy tracking-tight">
-          IPYNB <span className="text-brandTeal">Solutions</span>
+        {/* Logo */}
+        <a href="#" className="font-display font-bold text-xl tracking-tight flex items-center gap-1.5">
+          <span className="text-white">IPYNB</span>
+          <span className="text-brandTeal">Solutions</span>
         </a>
 
-        <ul className="hidden md:flex gap-10 list-none">
+        {/* Nav links */}
+        <ul className="hidden md:flex gap-8 list-none">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="text-slateText font-medium text-sm hover:text-brandNavy transition-colors">
+              <a
+                href={link.href}
+                className="text-white/60 font-medium text-sm hover:text-white transition-colors duration-200 tracking-wide"
+              >
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
 
+        {/* CTA */}
         <button
           onClick={handleConsult}
-          className="bg-brandTeal text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-teal-700 transition-colors"
+          className="bg-brandTeal/90 hover:bg-brandTeal text-white px-5 py-2 rounded-md text-sm font-semibold transition-all duration-200 border border-brandTeal/50 hover:border-brandTeal hover:shadow-[0_0_20px_rgba(0,139,139,0.3)]"
         >
-          Free Consultation
+          Contact
         </button>
       </div>
     </nav>

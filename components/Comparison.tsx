@@ -1,28 +1,28 @@
 export default function Comparison() {
   const rows = [
-    { them: 'Clunky, generic interface', us: 'Custom-built architecture for your workflow' },
-    { them: 'Hidden monthly subscription fees', us: 'Lifetime ownership — one-time payment' },
-    { them: '"One-size-fits-all" logic', us: 'System Analyst-led custom design' },
-    { them: 'Disappearing after-sale support', us: '24/7 WhatsApp partner support' },
-    { them: 'Weeks of onboarding', us: 'On-site deployment & 1-on-1 training' },
+    { them: 'Generic screens you have to work around', us: 'Built around how your business works' },
+    { them: 'Monthly subscription fees', us: 'One-time payment — the system is yours' },
+    { them: 'Same setup for every business', us: 'We visit and plan it with you first' },
+    { them: 'Hard to reach after the sale', us: 'WhatsApp support from the people who built it' },
+    { them: 'Learn it yourself', us: 'On-site setup and staff training' },
   ];
 
   return (
-    <section className="py-32 bg-brandGray">
+    <section className="py-24 bg-brandGray">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-display font-bold text-4xl lg:text-5xl text-brandNavy tracking-tight mb-4">
-            The Difference is in<br />How We Build.
+            Why businesses choose us
           </h2>
           <p className="text-slateText text-lg">
-            Most providers sell you a product. We build you a system.
+            How we compare with ready-made software.
           </p>
         </div>
 
         <div className="bg-white rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(15,23,42,0.05)] border border-slate-100">
           {/* Header */}
           <div className="grid grid-cols-2 border-b border-slate-100">
-            <div className="px-8 py-5 text-slateText font-semibold text-sm">Standard Providers</div>
+            <div className="px-8 py-5 text-slateText font-semibold text-sm">Ready-made software</div>
             <div className="px-8 py-5 bg-brandTeal/5 border-l-2 border-brandTeal text-brandTeal font-semibold text-sm">
               IPYNB Solutions
             </div>
