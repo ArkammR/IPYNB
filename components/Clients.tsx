@@ -56,7 +56,7 @@ export default function Clients() {
   const useSlider = CLIENTS.length >= CLIENT_SLIDER_MIN;
 
   return (
-    <section className="border-b border-line bg-paper py-16" aria-label="Clients">
+    <section className="border-y border-line bg-white py-16" aria-label="Clients">
       <div className="mx-auto max-w-[1248px] px-6">
         <p className="text-center text-xs font-semibold uppercase tracking-wider text-muted">
           Businesses we have built systems for

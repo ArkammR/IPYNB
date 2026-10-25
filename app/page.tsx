@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import Clients from '@/components/Clients';
 import Problem from '@/components/Problem';
 import Industries from '@/components/Industries';
-import Comparison from '@/components/Comparison';
+import WhyUs from '@/components/WhyUs';
 import Process from '@/components/Process';
 import Deployments from '@/components/Deployments';
 import Pricing from '@/components/Pricing';
@@ -19,7 +19,7 @@ export default function Home() {
       <Clients />
       <Problem />
       <Industries />
-      <Comparison />
+      <WhyUs />
       <Process />
       <Deployments />
       <Pricing />

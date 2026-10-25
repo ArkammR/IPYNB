@@ -27,13 +27,13 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 w-full z-[1000] transition-all duration-300 ${
       isScrolled
-        ? 'bg-[#0a0f1a]/95 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20'
-        : 'bg-[#0a0f1a]/80 backdrop-blur-md'
+        ? 'bg-white/70 backdrop-blur-xl backdrop-saturate-150 border-b border-line shadow-[0_1px_12px_rgba(20,23,28,0.06)]'
+        : 'bg-white/40 backdrop-blur-md border-b border-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="font-display font-bold text-xl tracking-tight flex items-center gap-1.5">
-          <span className="text-white">IPYNB</span>
+          <span className="text-ink">IPYNB</span>
           <span className="text-brandTeal">Solutions</span>
         </a>
 
@@ -43,7 +43,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-white/60 font-medium text-sm hover:text-white transition-colors duration-200 tracking-wide"
+                className="text-muted font-medium text-sm hover:text-ink transition-colors duration-200 tracking-wide"
               >
                 {link.label}
               </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* CTA */}
         <button
           onClick={handleConsult}
-          className="bg-brandTeal/90 hover:bg-brandTeal text-white px-5 py-2 rounded-md text-sm font-semibold transition-all duration-200 border border-brandTeal/50 hover:border-brandTeal hover:shadow-[0_0_20px_rgba(0,139,139,0.3)]"
+          className="bg-brandTeal hover:bg-[#007575] text-white px-5 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
         >
           Contact
         </button>
