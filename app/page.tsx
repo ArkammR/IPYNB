@@ -8,6 +8,7 @@ import Process from '@/components/Process';
 import Deployments from '@/components/Deployments';
 import Pricing from '@/components/Pricing';
 import About from '@/components/About';
+import WhatsAppCTA from '@/components/WhatsAppCTA';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 
@@ -24,6 +25,7 @@ export default function Home() {
       <Deployments />
       <Pricing />
       <About />
+      <WhatsAppCTA />
       <Footer />
       <WhatsAppFloat />
     </main>
