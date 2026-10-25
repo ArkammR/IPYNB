@@ -1,7 +1,7 @@
 export default function Comparison() {
   const rows = [
     { them: 'Generic screens you have to work around', us: 'Built around how your business works' },
-    { them: 'Monthly subscription fees', us: 'One-time payment — the system is yours' },
+    { them: 'Monthly fees just to keep using it', us: 'One-time setup — monthly plan only for ongoing support' },
     { them: 'Same setup for every business', us: 'We visit and plan it with you first' },
     { them: 'Hard to reach after the sale', us: 'WhatsApp support from the people who built it' },
     { them: 'Learn it yourself', us: 'On-site setup and staff training' },

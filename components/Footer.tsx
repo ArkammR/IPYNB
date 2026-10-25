@@ -16,7 +16,7 @@ export default function Footer() {
           Ready to move off paper?
         </h2>
         <p className="text-slate-400 text-lg mb-10 max-w-xl mx-auto">
-          Systems from LKR 65,000, one-time. Tell us about your business on WhatsApp.
+          Systems from LKR 30,000 one-time setup. Tell us about your business on WhatsApp.
         </p>
         <button
           onClick={handleCTA}
