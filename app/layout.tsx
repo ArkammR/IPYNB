@@ -6,10 +6,6 @@ export const metadata: Metadata = {
   description: 'Custom POS, billing and inventory systems for Sri Lankan businesses. One-time payment, on-site setup and staff training, WhatsApp support.',
   keywords: 'POS system Sri Lanka, billing system, business website, custom software Sri Lanka, IPYNB Solutions',
   authors: [{ name: 'IPYNB Solutions' }],
-  icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
-  },
   openGraph: {
     title: 'IPYNB Solutions | POS & Billing Systems in Sri Lanka',
     description: 'Custom POS, billing and inventory systems for Sri Lankan businesses. One-time payment.',
@@ -24,7 +20,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#080d17',
+  themeColor: '#FAF9F6',
 };
 
 export default function RootLayout({

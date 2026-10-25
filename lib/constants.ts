@@ -3,6 +3,8 @@ export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '94724
 // Human-readable form of WHATSAPP_NUMBER, shown in the footer
 export const WHATSAPP_DISPLAY = '+94 72 421 8840';
 
+export const CONTACT_EMAIL = 'info@ipynb.site';
+
 export type Client = {
   name: string;
   // Logo file in /public/clients. Without one, the client name is shown as text.

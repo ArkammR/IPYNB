@@ -12,14 +12,14 @@ const config: Config = {
         brandTeal: '#008B8B',
         brandGray: '#FAF9F6',
         slateText: '#475569',
-        // Pricing section palette — first iteration, swap when the final brand is chosen
+        // Light palette; accent matches the brand teal
         paper: '#FAF9F6',
         ink: '#14171C',
         muted: '#5B6270',
         line: '#E3E2DD',
-        accent: '#2456C4',
-        accentHover: '#1D47A3',
-        accentSoft: '#EEF3FC',
+        accent: '#008B8B',
+        accentHover: '#007575',
+        accentSoft: '#E6F4F4',
         // keep legacy colors for any remaining refs
         navy: '#0F172A',
         orange: '#FF6B00',
