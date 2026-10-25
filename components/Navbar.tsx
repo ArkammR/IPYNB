@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { WHATSAPP_NUMBER } from '@/lib/constants';
 import { openWhatsApp } from '@/lib/utils';
 
@@ -32,9 +33,16 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="font-display font-bold text-xl tracking-tight flex items-center gap-1.5">
-          <span className="text-ink">IPYNB</span>
-          <span className="text-brandTeal">Solutions</span>
+        <a href="#" className="flex items-center" aria-label="IPYNB Solutions home">
+          <Image
+            src="/brand/ipynb-solutions-logo.svg"
+            alt="ipynb Solutions"
+            width={728}
+            height={150}
+            priority
+            unoptimized
+            className="h-10 w-auto md:h-11"
+          />
         </a>
 
         {/* Nav links */}
