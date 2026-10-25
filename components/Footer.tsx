@@ -49,10 +49,6 @@ function LinkColumn({ title, links }: { title: string; links: FooterLink[] }) {
 }
 
 export default function Footer() {
-  const handleCTA = () => {
-    openWhatsApp("Hi! I'd like to replace my manual system with a custom IPYNB solution.", WHATSAPP_NUMBER);
-  };
-
   const packageLinks: FooterLink[] = PRICING_PLANS.map((plan) => ({ label: plan.name, href: '#pricing' }));
 
   const careLinks: FooterLink[] = [
@@ -67,29 +63,11 @@ export default function Footer() {
 
   return (
     <footer>
-      {/* CTA band */}
-      <div className="bg-brandTeal">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-14 text-center md:flex-row md:text-left">
-          <div>
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white">Ready to move off paper?</h2>
-            <p className="mt-2 text-white/80">
-              Systems from LKR 30,000 one-time setup. Tell us about your business on WhatsApp.
-            </p>
-          </div>
-          <button
-            onClick={handleCTA}
-            className="flex-shrink-0 rounded-lg bg-white px-8 py-3.5 font-semibold text-brandTeal transition-colors hover:bg-paper"
-          >
-            Chat on WhatsApp
-          </button>
-        </div>
-      </div>
-
       {/* Main footer */}
-      <div className="bg-paper">
+      <div className="border-t border-line bg-paper">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#" className="inline-block overflow-hidden rounded-xl" aria-label="IPYNB Solutions home">
+            <a href="#" className="-ml-[4%] inline-block" aria-label="IPYNB Solutions home">
               <Image
                 src="/brand/ipynb-solutions-footer-logo.svg"
                 alt="ipynb Solutions"
