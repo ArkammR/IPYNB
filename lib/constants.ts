@@ -12,8 +12,11 @@ export type Client = {
 // Add a client here once they have agreed to be shown on the site.
 // The row becomes a scrolling slider automatically at CLIENT_SLIDER_MIN entries.
 export const CLIENTS: Client[] = [
-  { name: 'Auto Pilot', logo: { src: '/clients/auto-pilot.png', width: 376, height: 176 } },
-  { name: 'Ceylon Chai' },
+  { name: 'Auto Pilot', logo: { src: '/clients/auto-pilot.png', width: 640, height: 304 } },
+  { name: 'Ceylon Chai', logo: { src: '/clients/ceylon-chai.png', width: 640, height: 640 } },
+  { name: 'The Perfume Stories', logo: { src: '/clients/the-perfume-stories.png', width: 640, height: 621 } },
+  { name: 'smartLap.lk', logo: { src: '/clients/smartlap.png', width: 150, height: 33 } },
+  { name: 'CW', logo: { src: '/clients/cw.png', width: 354, height: 354 } },
 ];
 
 export const CLIENT_SLIDER_MIN = 5;

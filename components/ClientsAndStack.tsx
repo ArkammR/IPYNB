@@ -2,15 +2,24 @@ import Image from 'next/image';
 import { CLIENTS, CLIENT_SLIDER_MIN, type Client } from '@/lib/constants';
 import { TECH_STACK } from '@/lib/techStack';
 
+// Logos come in very different shapes. Scale height by aspect ratio so a wide
+// wordmark and a square badge carry roughly the same visual weight.
+function logoHeight(width: number, height: number) {
+  const aspect = width / height;
+  return Math.round(Math.min(64, Math.max(32, 44 * Math.sqrt(2.2 / aspect))));
+}
+
 function ClientLogo({ client }: { client: Client }) {
   if (client.logo) {
+    const h = logoHeight(client.logo.width, client.logo.height);
     return (
       <Image
         src={client.logo.src}
         alt={client.name}
         width={client.logo.width}
         height={client.logo.height}
-        className="h-12 w-auto opacity-70 transition-opacity hover:opacity-100"
+        style={{ height: h, width: 'auto' }}
+        className="opacity-75 transition-opacity hover:opacity-100"
       />
     );
   }
@@ -33,7 +42,7 @@ function ClientSlider({ clients }: { clients: Client[] }) {
         {[...half, ...half].map((client, i) => (
           <li
             key={`${client.name}-${i}`}
-            className="flex h-16 items-center px-10"
+            className="flex h-20 items-center px-10"
             aria-hidden={i >= half.length || undefined}
           >
             <ClientLogo client={client} />
