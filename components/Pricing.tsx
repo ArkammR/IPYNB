@@ -102,7 +102,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
 
 export default function Pricing() {
   return (
-    <section className="bg-paper py-24" id="pricing">
+    <section className="border-t border-line bg-paper py-24" id="pricing">
       <div className="mx-auto max-w-[1248px] px-6">
         <div className="mx-auto mb-14 max-w-[960px] text-center">
           <p className="text-xs font-semibold uppercase tracking-wider text-muted">

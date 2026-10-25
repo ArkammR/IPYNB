@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { CLIENTS, CLIENT_SLIDER_MIN, type Client } from '@/lib/constants';
-import { TECH_STACK } from '@/lib/techStack';
 
 // Logos come in very different shapes. Scale height by aspect ratio so a wide
 // wordmark and a square badge carry roughly the same visual weight.
@@ -53,11 +52,11 @@ function ClientSlider({ clients }: { clients: Client[] }) {
   );
 }
 
-export default function ClientsAndStack() {
+export default function Clients() {
   const useSlider = CLIENTS.length >= CLIENT_SLIDER_MIN;
 
   return (
-    <section className="border-b border-line bg-paper py-16" aria-label="Clients and technology">
+    <section className="border-y border-line bg-white py-16" aria-label="Clients">
       <div className="mx-auto max-w-[1248px] px-6">
         <p className="text-center text-xs font-semibold uppercase tracking-wider text-muted">
           Businesses we have built systems for
@@ -75,28 +74,6 @@ export default function ClientsAndStack() {
               ))}
             </ul>
           )}
-        </div>
-
-        <div className="mx-auto mt-12 max-w-3xl border-t border-line pt-10">
-          <p className="text-center text-xs font-semibold uppercase tracking-wider text-muted">
-            Built with
-          </p>
-          <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-            {TECH_STACK.map((tech) => (
-              <li key={tech.name} className="group flex items-center gap-2.5">
-                <svg
-                  role="img"
-                  aria-label={tech.name}
-                  viewBox="0 0 24 24"
-                  className="h-6 w-6 fill-muted transition-colors"
-                  style={{ ['--brand' as string]: tech.color }}
-                >
-                  <path d={tech.path} className="group-hover:fill-[var(--brand)]" />
-                </svg>
-                <span className="text-sm font-medium text-muted">{tech.name}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
