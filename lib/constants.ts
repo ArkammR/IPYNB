@@ -3,6 +3,21 @@ export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '94724
 // Human-readable form of WHATSAPP_NUMBER, shown in the footer
 export const WHATSAPP_DISPLAY = '+94 72 421 8840';
 
+export type Client = {
+  name: string;
+  // Logo file in /public/clients. Without one, the client name is shown as text.
+  logo?: { src: string; width: number; height: number };
+};
+
+// Add a client here once they have agreed to be shown on the site.
+// The row becomes a scrolling slider automatically at CLIENT_SLIDER_MIN entries.
+export const CLIENTS: Client[] = [
+  { name: 'Auto Pilot', logo: { src: '/clients/auto-pilot.png', width: 376, height: 176 } },
+  { name: 'Ceylon Chai' },
+];
+
+export const CLIENT_SLIDER_MIN = 5;
+
 export type PricingPlan = {
   id: 'starter' | 'advanced' | 'enterprise';
   label: string;

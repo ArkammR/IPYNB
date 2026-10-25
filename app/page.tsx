@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import ClientsAndStack from '@/components/ClientsAndStack';
 import Problem from '@/components/Problem';
 import Industries from '@/components/Industries';
 import Comparison from '@/components/Comparison';
@@ -15,6 +16,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <ClientsAndStack />
       <Problem />
       <Industries />
       <Comparison />
