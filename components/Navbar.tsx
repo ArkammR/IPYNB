@@ -32,10 +32,9 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="font-display font-bold text-xl tracking-tight flex items-center gap-2">
-          <span className="text-white">IP</span>
-          <span className="w-px h-5 bg-white/20" />
-          <span className="text-white/90 font-light text-sm tracking-widest uppercase">IPYNB</span>
+        <a href="#" className="font-display font-bold text-xl tracking-tight flex items-center gap-1.5">
+          <span className="text-white">IPYNB</span>
+          <span className="text-brandTeal">Solutions</span>
         </a>
 
         {/* Nav links */}
