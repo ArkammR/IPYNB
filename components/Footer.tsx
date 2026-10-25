@@ -89,11 +89,15 @@ export default function Footer() {
       <div className="bg-paper">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#" className="inline-flex items-center gap-3" aria-label="IPYNB Solutions home">
-              <Image src="/logo-mark.png" alt="" width={256} height={230} className="h-14 w-auto" />
-              <span className="font-display text-xl font-bold tracking-tight">
-                <span className="text-ink">IPYNB</span> <span className="text-brandTeal">Solutions</span>
-              </span>
+            <a href="#" className="inline-block overflow-hidden rounded-xl" aria-label="IPYNB Solutions home">
+              <Image
+                src="/brand/ipynb-solutions-footer-logo.svg"
+                alt="ipynb Solutions"
+                width={380}
+                height={206}
+                unoptimized
+                className="h-auto w-48"
+              />
             </a>
 
             <a href={`tel:+${WHATSAPP_NUMBER}`} className="group mt-8 flex items-center gap-4">
