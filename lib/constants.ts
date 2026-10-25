@@ -3,46 +3,72 @@ export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '94724
 // Human-readable form of WHATSAPP_NUMBER, shown in the footer
 export const WHATSAPP_DISPLAY = '+94 72 421 8840';
 
-export const PRICING_PLANS = [
+export type PricingPlan = {
+  id: 'starter' | 'advanced' | 'enterprise';
+  label: string;
+  name: string;
+  description: string;
+  price: string;
+  priceCaption: string;
+  recurring?: { price: string; caption: string };
+  features: string[];
+  cta: string;
+  ctaMessage: string;
+  featured?: boolean;
+};
+
+export const PRICING_PLANS: PricingPlan[] = [
   {
-    name: 'Starter',
-    price: 65000,
-    description: 'For small businesses getting their first system',
+    id: 'starter',
+    label: 'Starter',
+    name: 'Essential Retail POS',
+    description: 'Straightforward billing and stock control for shops and cafés.',
+    price: 'LKR 30,000',
+    priceCaption: 'One-time setup',
     features: [
-      'Single system (POS or Billing)',
-      'Basic setup & configuration',
-      '1 staff training session',
-      '6 months WhatsApp support',
-      'Free bug fixes',
+      'Fast counter checkout',
+      'Inventory tracking',
+      'Digital or printed receipts',
+      'Sales summaries',
+      'Staff role management',
     ],
-    highlight: false,
+    cta: 'Get started',
+    ctaMessage: "Hi IPYNB! I'd like to get started with the Essential Retail POS.",
   },
   {
-    name: 'Business',
-    price: 145000,
-    description: 'For growing businesses that need POS and billing',
+    id: 'advanced',
+    label: 'Most popular',
+    name: 'Advanced Operations POS',
+    description: 'More visibility and control for growing teams.',
+    price: 'LKR 65,000',
+    priceCaption: 'One-time setup',
+    recurring: { price: 'LKR 3,000 / month', caption: 'Ongoing updates & support' },
     features: [
-      'POS + Billing system',
-      'Full setup & configuration',
-      '3 staff training sessions',
-      '12 months WhatsApp support',
-      'Free updates & upgrades',
-      'Custom branding',
+      'Everything in Essential POS',
+      'Advanced sales reports',
+      'Multi-user permissions',
+      'Activity logs and audit trail',
+      'Ongoing updates and support',
     ],
-    highlight: true,
+    cta: 'Request a demo',
+    ctaMessage: "Hi IPYNB! I'd like to request a demo of the Advanced Operations POS.",
+    featured: true,
   },
   {
-    name: 'Enterprise',
-    price: 395000,
-    description: 'POS, billing, website and app working together',
+    id: 'enterprise',
+    label: 'Custom',
+    name: 'Custom Software Suite',
+    description: 'Purpose-built systems for workflows that standard software cannot handle.',
+    price: 'Custom quote',
+    priceCaption: 'Scoped to your requirements',
     features: [
-      'POS + Billing + Website + App',
-      'Full system integration',
-      'Unlimited training sessions',
-      'Lifetime WhatsApp support',
-      'Priority response',
-      'Custom features on request',
+      'Custom business logic',
+      'Tailored workflows and data',
+      'Specialised reporting',
+      'Integration planning',
+      'Project guidance',
     ],
-    highlight: false,
+    cta: 'Book a discovery call',
+    ctaMessage: "Hi IPYNB! I'd like to book a discovery call about a custom software suite.",
   },
 ];

@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Subtext */}
           <p className="text-white/50 text-lg leading-relaxed mb-10 max-w-lg">
             POS, billing and inventory systems set up for the way your shop already runs.
-            Pay once and the system is yours — no monthly subscription.
+            Systems start with a one-time setup fee, with optional monthly support for ongoing updates.
           </p>
 
           {/* CTAs */}
@@ -79,16 +79,16 @@ export default function Hero() {
           {/* Stats */}
           <div className="flex flex-wrap gap-x-8 gap-y-4 mt-12 pt-8 border-t border-white/10">
             <div>
-              <p className="font-display font-bold text-2xl text-white">LKR 65,000</p>
-              <p className="text-white/40 text-sm mt-0.5">Starting price, one-time</p>
+              <p className="font-display font-bold text-2xl text-white">LKR 30,000</p>
+              <p className="text-white/40 text-sm mt-0.5">One-time setup, from</p>
             </div>
             <div>
               <p className="font-display font-bold text-2xl text-white">On-site</p>
               <p className="text-white/40 text-sm mt-0.5">Setup &amp; staff training</p>
             </div>
             <div>
-              <p className="font-display font-bold text-2xl text-brandTeal">LKR 0</p>
-              <p className="text-white/40 text-sm mt-0.5">Monthly fees</p>
+              <p className="font-display font-bold text-2xl text-brandTeal">WhatsApp</p>
+              <p className="text-white/40 text-sm mt-0.5">Support from the team that built it</p>
             </div>
           </div>
         </div>
