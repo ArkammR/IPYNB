@@ -14,6 +14,8 @@ const nextConfig = {
     ],
   },
   headers: async () => {
+    // Never cache in dev: stale client chunks cause hydration mismatches
+    if (process.env.NODE_ENV !== 'production') return [];
     return [
       {
         source: '/:path*',
