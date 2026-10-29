@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Clients from '@/components/Clients';
-import Problem from '@/components/Problem';
+import PaperToCloud from '@/components/PaperToCloud';
 import Industries from '@/components/Industries';
 import WhyUs from '@/components/WhyUs';
 import Process from '@/components/Process';
@@ -18,7 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Clients />
-      <Problem />
+      <PaperToCloud />
       <Industries />
       <WhyUs />
       <Process />

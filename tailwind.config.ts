@@ -32,6 +32,7 @@ const config: Config = {
         display: ['Montserrat', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         grotesk: ['Montserrat', 'sans-serif'],
+        hand: ['Caveat', 'cursive'],
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
